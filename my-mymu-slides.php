@@ -57,11 +57,11 @@ function mymu_slides_query() {
 				'url'      => get_field( 'mu_gallery_external_url' ),
 			);
 		}
-		return $data;
 	}
 
-	/* Restore original Post Data */
 	wp_reset_postdata();
+
+	return $data;
 }
 add_shortcode( 'mymu_slides', 'mymu_slides_query' );
 
