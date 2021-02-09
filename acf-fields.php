@@ -51,7 +51,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'class' => '',
 					'id' => '',
 				),
-				'display_format' => 'd/m/Y g:i a',
+				'display_format' => 'm/d/Y g:i a',
 				'return_format' => 'd/m/Y g:i a',
 				'first_day' => 1,
 			),

@@ -48,8 +48,8 @@ function mymu_slides_query() {
 			),
 			array(
 				'key'     => 'mymu_slides_expire_date',
-				'value'   => date( 'Y-m-d' ), // phpcs:ignore
-				'type'    => 'DATE',
+				'value'   => date( 'Y-m-d h:i:s' ), // phpcs:ignore
+				'type'    => 'DATETIME',
 				'compare' => '>',
 			),
 		),
