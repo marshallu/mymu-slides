@@ -40,8 +40,19 @@ function mymu_slides_query() {
 	$args = array(
 		'post_type'   => 'attachment',
 		'post_status' => 'inherit',
-		'meta_key'    => 'mymu_slides_add_to_mymu_slideshow',
-		'meta_value'  => true,
+		'meta_query'     => array( // phpcs:ignore
+			'relation' => 'AND',
+			array(
+				'key'   => 'mymu_slides_add_to_mymu_slideshow', // phpcs:ignore
+				'value' => true, // phpcs:ignore
+			),
+			array(
+				'key'     => 'mymu_slides_expire_date',
+				'value'   => date( 'Y-m-d' ), // phpcs:ignore
+				'type'    => 'DATE',
+				'compare' => '>',
+			),
+		),
 	);
 
 	$the_query = new WP_Query( $args );

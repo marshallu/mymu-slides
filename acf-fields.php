@@ -30,6 +30,31 @@ if( function_exists('acf_add_local_field_group') ):
 				'ui_on_text' => '',
 				'ui_off_text' => '',
 			),
+			array(
+				'key' => 'field_60228b7c960ee',
+				'label' => 'Expire Date',
+				'name' => 'mymu_slides_expire_date',
+				'type' => 'date_time_picker',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_602176af4bf60',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'display_format' => 'd/m/Y g:i a',
+				'return_format' => 'd/m/Y g:i a',
+				'first_day' => 1,
+			),
 		),
 		'location' => array(
 			array(
