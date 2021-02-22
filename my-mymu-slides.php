@@ -45,7 +45,10 @@ function mymu_slides_query() {
 	$args = array(
 		'post_type'   => 'attachment',
 		'post_status' => 'inherit',
-		'orderby'     => array( 'meta_value_num', 'date' ),
+		'orderby'     => array(
+			'meta_value_num' => 'ASC',
+			'date'           => 'DESC',
+		),
 		'meta_key'    => 'order_by',
 		'meta_query'  => array( // phpcs:ignore
 			'relation' => 'AND',
