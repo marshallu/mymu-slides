@@ -36,7 +36,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'name' => 'mymu_slides_expire_date',
 				'type' => 'date_time_picker',
 				'instructions' => '',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => array(
 					array(
 						array(
@@ -51,9 +51,28 @@ if( function_exists('acf_add_local_field_group') ):
 					'class' => '',
 					'id' => '',
 				),
-				'display_format' => 'm/d/Y g:i a',
+				'display_format' => 'd/m/Y g:i a',
 				'return_format' => 'd/m/Y g:i a',
 				'first_day' => 1,
+			),
+			array(
+				'key' => 'field_6033dc7b3ef14',
+				'label' => 'Order By',
+				'name' => 'order_by',
+				'type' => 'text',
+				'instructions' => 'This field will override the default order by value. The lower the number the earlier it will appear in the list. -10 will appear before 0 or 10.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => 0,
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
 			),
 		),
 		'location' => array(

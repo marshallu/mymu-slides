@@ -35,12 +35,19 @@ function mymu_slides_deactivate() {
 }
 register_activation_hook( __FILE__, 'mymu_slides_deactivate' );
 
+/**
+ * The query to get the slides for the REST endpoint
+ *
+ * @return array
+ */
 function mymu_slides_query() {
 
 	$args = array(
 		'post_type'   => 'attachment',
 		'post_status' => 'inherit',
-		'meta_query'     => array( // phpcs:ignore
+		'orderby'     => array( 'meta_value_num', 'date' ),
+		'meta_key'    => 'order_by',
+		'meta_query'  => array( // phpcs:ignore
 			'relation' => 'AND',
 			array(
 				'key'   => 'mymu_slides_add_to_mymu_slideshow', // phpcs:ignore
