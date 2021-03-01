@@ -43,14 +43,15 @@ register_activation_hook( __FILE__, 'mymu_slides_deactivate' );
 function mymu_slides_query() {
 
 	$args = array(
-		'post_type'   => 'attachment',
-		'post_status' => 'inherit',
-		'orderby'     => array(
+		'post_type'      => 'attachment',
+		'post_status'    => 'inherit',
+		'posts_per_page' => 25,
+		'orderby'        => array(
 			'meta_value_num' => 'ASC',
 			'date'           => 'DESC',
 		),
-		'meta_key'    => 'order_by',
-		'meta_query'  => array( // phpcs:ignore
+		'meta_key'       => 'order_by', // phpcs:ignore
+		'meta_query'     => array( // phpcs:ignore
 			'relation' => 'AND',
 			array(
 				'key'   => 'mymu_slides_add_to_mymu_slideshow', // phpcs:ignore
