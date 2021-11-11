@@ -108,16 +108,9 @@ add_action(
 );
 
 /**
- * Delete the transient for slides when post is updated.
- *
- * @param string $new The string of the new post type.
- * @param string $old The string of the old post type.
- * @param object $post The post object.
- * @return void
+ * Delete the transient for slides when attachment is updated.
  */
-function mu_mymu_slides_purge_transient_on_publish( $new, $old, $post ) {
-	if ( 'publish' === $new ) {
-		delete_transient( 'mu_mymu_slides' );
-	}
+function mu_mymu_slides_purge_transient_on_publish() {
+	delete_transient( 'mu_mymu_slides' );
 }
-add_action( 'transition_post_status', 'mu_mymu_slides_purge_transient_on_publish', 10, 3 );
+add_action( 'attachment_updated', 'mu_mymu_slides_purge_transient_on_publish', 10, 3 );
