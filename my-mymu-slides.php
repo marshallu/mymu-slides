@@ -41,7 +41,6 @@ register_activation_hook( __FILE__, 'mymu_slides_deactivate' );
  * @return array
  */
 function mymu_slides_query() {
-
 	if ( false === get_transient( 'mu_mymu_slides' ) ) {
 		$args = array(
 			'post_type'      => 'attachment',

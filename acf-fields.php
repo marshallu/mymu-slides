@@ -4,7 +4,6 @@
  *
  * @package mymu-slides
  */
-
 if( function_exists('acf_add_local_field_group') ):
 
 	acf_add_local_field_group(array(
@@ -92,6 +91,8 @@ if( function_exists('acf_add_local_field_group') ):
 		'hide_on_screen' => '',
 		'active' => true,
 		'description' => '',
+		'show_in_rest' => false,
+		'modified' => 1638977541,
 	));
 
 	endif;
